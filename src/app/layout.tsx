@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { ConvexAuthNextjsServerProvider } from '@convex-dev/auth/nextjs/server'
+import { Toaster } from '@/shared/components/ui/sonner'
+import { Modals } from '@/shared/components'
 import { Providers } from './providers'
 
 const geistSans = Geist({
@@ -30,7 +32,11 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <Providers> {children}</Providers>
+          <Providers>
+            <Modals />
+            {children}
+            <Toaster />
+          </Providers>
         </body>
       </html>
     </ConvexAuthNextjsServerProvider>

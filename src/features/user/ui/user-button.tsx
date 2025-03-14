@@ -13,11 +13,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/shared/components/ui/dropdown-menu'
-import { useUser } from '../model'
+import { useCurrentUser } from '../api'
 
 export const UserButton = () => {
   const { signOut } = useAuthActions()
-  const { data, isLoading } = useUser()
+  const { data, isLoading } = useCurrentUser()
 
   if (isLoading) {
     return <Loader className='text-muted-foreground size-4 animate-spin' />
