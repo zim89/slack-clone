@@ -1,9 +1,19 @@
-interface Props {
-  params: {
-    id: string
-  }
-}
+'use client'
 
-export default function Page({ params }: Props) {
-  return <div>Workspace Page with ID: {params.id}</div>
+import { useGetWorkspace } from '@/features/workspace'
+import { useWorkspaceId } from '@/shared/hooks'
+
+export default function Page() {
+  const workspaceId = useWorkspaceId()
+
+  const { data: workspace, isLoading: workspaceLoading } = useGetWorkspace({
+    id: workspaceId,
+  })
+
+  return (
+    <div>
+      <h1>Workspace Page with ID: {workspaceId}</h1>
+      {!workspaceLoading && <div>{workspace?.name}</div>}
+    </div>
+  )
 }

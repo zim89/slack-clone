@@ -8,7 +8,10 @@ export const StatusEnum = {
 export type StatusType = (typeof StatusEnum)[keyof typeof StatusEnum]
 
 export const ResourceEnum = {
-  Workspace: 'workspaces',
+  Workspace: 'workspace',
+  Channel: 'channel',
+  Member: 'member',
+  Message: 'message',
 } as const
 
 export type ResourceType = (typeof ResourceEnum)[keyof typeof ResourceEnum]
