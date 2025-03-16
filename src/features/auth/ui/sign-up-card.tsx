@@ -3,12 +3,6 @@ import { useAuthActions } from '@convex-dev/auth/react'
 import { TriangleAlert } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
-import {
-  AuthFlowEnum,
-  AuthProviderEnum,
-  type AuthFlowType,
-  type AuthProviderType,
-} from '@/entities/auth'
 import { Button } from '@/shared/components/ui/button'
 import {
   Card,
@@ -19,6 +13,12 @@ import {
 } from '@/shared/components/ui/card'
 import { Input } from '@/shared/components/ui/input'
 import { Separator } from '@/shared/components/ui/separator'
+import {
+  AuthFlowEnum,
+  AuthProviderEnum,
+  type AuthFlowType,
+  type AuthProviderType,
+} from '@/entities/auth'
 
 interface SignUpCardProps {
   setState: (state: AuthFlowType) => void

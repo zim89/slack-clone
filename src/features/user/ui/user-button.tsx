@@ -13,7 +13,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/shared/components/ui/dropdown-menu'
-import { useCurrentUser } from '../api'
+import { useCurrentUser } from '@/entities/user'
 
 export const UserButton = () => {
   const { signOut } = useAuthActions()

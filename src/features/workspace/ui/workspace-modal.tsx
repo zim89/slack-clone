@@ -11,9 +11,11 @@ import {
   DialogTitle,
 } from '@/shared/components/ui/dialog'
 import { Input } from '@/shared/components/ui/input'
+import {
+  useCreateWorkspace,
+  useWorkspaceModalStore,
+} from '@/entities/workspace'
 import { appRoutes } from '@/shared/config'
-import { useCreateWorkspace } from '../api'
-import { useWorkspaceModalStore } from '../model'
 
 export const WorkspaceModal = () => {
   const [name, setName] = useState('')

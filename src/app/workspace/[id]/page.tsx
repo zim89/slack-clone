@@ -1,6 +1,6 @@
 'use client'
 
-import { useGetWorkspace } from '@/features/workspace'
+import { useGetWorkspace } from '@/entities/workspace'
 import { useWorkspaceId } from '@/shared/hooks'
 
 export default function Page() {

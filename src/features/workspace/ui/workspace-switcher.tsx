@@ -7,10 +7,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/shared/components/ui/dropdown-menu'
+import {
+  useGetWorkspace,
+  useGetWorkspaces,
+  useWorkspaceModalStore,
+} from '@/entities/workspace'
 import { appRoutes } from '@/shared/config'
 import { useWorkspaceId } from '@/shared/hooks'
-import { useGetWorkspace, useGetWorkspaces } from '../api'
-import { useWorkspaceModalStore } from '../model'
 
 export const WorkspaceSwitcher = () => {
   const router = useRouter()

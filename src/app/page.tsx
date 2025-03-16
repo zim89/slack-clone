@@ -3,7 +3,7 @@
 import { useEffect, useMemo } from 'react'
 import { useRouter } from 'next/navigation'
 import { UserButton } from '@/features/user'
-import { useGetWorkspaces, useWorkspaceModalStore } from '@/features/workspace'
+import { useGetWorkspaces, useWorkspaceModalStore } from '@/entities/workspace'
 import { appRoutes } from '@/shared/config'
 
 export default function Home() {

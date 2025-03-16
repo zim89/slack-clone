@@ -1,10 +1,10 @@
 import { useCallback, useMemo, useState } from 'react'
+import { useMutation } from 'convex/react'
 import { api } from '@convex/_generated/api'
 import { Id } from '@convex/_generated/dataModel'
-import { useMutation } from 'convex/react'
 import { StatusEnum, type StatusType } from '@/shared/constants'
 
-type RequestType = { name: string }
+type RequestType = { workspaceId: Id<'workspaces'> }
 type ResponseType = Id<'workspaces'> | null
 
 type Options = {
@@ -14,7 +14,7 @@ type Options = {
   throwError?: boolean
 }
 
-export const useCreateWorkspace = () => {
+export const useNewJoinCode = () => {
   const [data, setData] = useState<ResponseType>(null)
   const [error, setError] = useState<Error | null>(null)
   const [status, setStatus] = useState<StatusType | null>(null)
@@ -24,7 +24,7 @@ export const useCreateWorkspace = () => {
   const isError = useMemo(() => status === StatusEnum.Error, [status])
   const isSettled = useMemo(() => status === StatusEnum.Settled, [status])
 
-  const mutation = useMutation(api.workspaces.create)
+  const mutation = useMutation(api.workspaces.newJoinCode)
 
   const mutate = useCallback(
     async (values: RequestType, options?: Options) => {
@@ -39,7 +39,6 @@ export const useCreateWorkspace = () => {
       } catch (error) {
         setStatus(StatusEnum.Error)
         options?.onError?.(error as Error)
-
         if (options?.throwError) {
           throw error
         }

@@ -9,7 +9,7 @@ interface Props {
   isActive?: boolean
 }
 
-export const SidebarButton = ({ icon: Icon, label, isActive }: Props) => {
+export const NavbarItem = ({ icon: Icon, label, isActive }: Props) => {
   return (
     <div className='group flex cursor-pointer flex-col items-center justify-center gap-y-0.5'>
       <Button
