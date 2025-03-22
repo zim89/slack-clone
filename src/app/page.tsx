@@ -2,31 +2,30 @@
 
 import { useEffect, useMemo } from 'react'
 import { useRouter } from 'next/navigation'
-import { UserButton } from '@/features/user'
+import { Loader } from 'lucide-react'
 import { useGetWorkspaces, useWorkspaceModalStore } from '@/entities/workspace'
-import { appRoutes } from '@/shared/config'
 
 export default function Home() {
-  const [open, setOpen] = useWorkspaceModalStore()
-  const { data, isLoading } = useGetWorkspaces()
   const router = useRouter()
+  const [open, setOpen] = useWorkspaceModalStore()
 
-  const workspacesId = useMemo(() => data?.[0]?._id, [data])
+  const { data, isLoading } = useGetWorkspaces()
+
+  const workspaceId = useMemo(() => data?.[0]?._id, [data])
 
   useEffect(() => {
     if (isLoading) return
 
-    if (workspacesId) {
-      router.replace(`${appRoutes.workspace}/${workspacesId}`)
+    if (workspaceId) {
+      router.replace(`/workspace/${workspaceId}`)
     } else if (!open) {
       setOpen(true)
     }
-  }, [isLoading, open, router, setOpen, workspacesId])
+  }, [workspaceId, isLoading, open, setOpen, router])
 
   return (
-    <div>
-      <h1>Home page</h1>
-      <UserButton />
+    <div className='flex h-full items-center justify-center'>
+      <Loader className='text-muted-foreground size-6 animate-spin' />
     </div>
   )
 }
