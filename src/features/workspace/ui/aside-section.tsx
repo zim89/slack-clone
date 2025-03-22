@@ -17,14 +17,17 @@ export const AsideSection = ({ children, label, hint, onNew }: Props) => {
 
   return (
     <div className='mt-3 flex flex-col px-2'>
-      <div className='group flex items-center px-3.5'>
+      <div className='group flex items-center'>
         <Button
           variant='transparent'
           className='size-6 shrink-0 p-0.5 text-sm text-[#f9edffcc]'
           onClick={toggle}
         >
           <FaCaretDown
-            className={cn('size-4 transition-transform', value && '-rotate-90')}
+            className={cn(
+              'size-4 transition-transform',
+              !value && '-rotate-90',
+            )}
           />
         </Button>
         <Button
