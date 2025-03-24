@@ -54,7 +54,7 @@ export const ChatInput = ({ placeholder }: Props) => {
       }
 
       if (image) {
-        const url = await generateUploadUrl({}, { throwError: true })
+        const url = await generateUploadUrl({ throwError: true })
 
         if (!url) {
           throw new Error('Url not found')
