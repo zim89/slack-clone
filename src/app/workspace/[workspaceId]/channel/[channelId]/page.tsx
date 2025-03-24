@@ -9,6 +9,7 @@ import { Header } from './header'
 const Page = () => {
   const channelId = useChannelId()
 
+  // TODO: get messages hook
   const { data: channel, isLoading: channelLoading } = useGetChannel({
     id: channelId,
   })
@@ -33,10 +34,8 @@ const Page = () => {
   return (
     <div className='flex h-full flex-col'>
       <Header title={channel.name} />
-
-      {/* //TODO: Implement MessageList component*/}
-
-      <ChatInput />
+      {/* //TODO: chat list component */}
+      <ChatInput placeholder={`Message #${channel.name}`} />
     </div>
   )
 }
