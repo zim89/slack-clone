@@ -1,3 +1,5 @@
 export * from './hint'
 export * from './editor'
 export * from './emoji-popover'
+export * from './renderer'
+export * from './toolbar'

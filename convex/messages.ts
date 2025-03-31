@@ -229,13 +229,13 @@ export const get = query({
     let _conversationId = args.conversationId
 
     if (!args.conversationId && !args.channelId && args.parentMessageId) {
-      const parentMesage = await ctx.db.get(args.parentMessageId)
+      const parentMessage = await ctx.db.get(args.parentMessageId)
 
-      if (!parentMesage) {
+      if (!parentMessage) {
         throw new Error('Parent message not found')
       }
 
-      _conversationId = parentMesage.conversationId
+      _conversationId = parentMessage.conversationId
     }
 
     const results = await ctx.db

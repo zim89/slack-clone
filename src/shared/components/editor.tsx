@@ -1,3 +1,5 @@
+'use client'
+
 import { RefObject, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { ImageIcon, Smile, XIcon } from 'lucide-react'
