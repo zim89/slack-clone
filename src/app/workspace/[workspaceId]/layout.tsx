@@ -1,11 +1,16 @@
 'use client'
 
 import type { ReactNode } from 'react'
+import { Loader } from 'lucide-react'
+import type { Id } from '@convex/_generated/dataModel'
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from '@/shared/components/ui/resizable'
+import { usePanel } from '@/widgets/message-list'
+import { Thread } from '@/features/message'
+import { Profile } from '@/features/user'
 import {
   WorkspaceAside,
   WorkspaceNavbar,
@@ -17,6 +22,9 @@ interface Props {
 }
 
 const WorkspaceLayout = ({ children }: Props) => {
+  const { parentMessageId, profileMemberId, onClose } = usePanel()
+  const showPanel = !!parentMessageId || !!profileMemberId
+
   return (
     <div className='h-full'>
       <WorkspaceToolbar />
@@ -42,7 +50,7 @@ const WorkspaceLayout = ({ children }: Props) => {
             {children}
           </ResizablePanel>
 
-          {/* {showPanel && (
+          {showPanel && (
             <>
               <ResizableHandle withHandle />
               <ResizablePanel minSize={20} defaultSize={29}>
@@ -63,7 +71,7 @@ const WorkspaceLayout = ({ children }: Props) => {
                 )}
               </ResizablePanel>
             </>
-          )} */}
+          )}
         </ResizablePanelGroup>
       </div>
     </div>
