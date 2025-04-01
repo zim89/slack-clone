@@ -181,7 +181,7 @@ export const Profile = ({ memberId, onClose }: ProfileProps) => {
           <p className='tex-xl font-bold'>{member.user.name}</p>
           {currentMember?.role === 'admin' &&
           currentMember?._id !== memberId ? (
-            <div className='mt-4 flex items-center gap-2'>
+            <div className='mt-4 grid grid-cols-2 gap-2'>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant='outline' className='w-full capitalize'>
