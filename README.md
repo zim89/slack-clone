@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Slack Clone
 
-## Getting Started
+A feature-rich Slack clone built with modern technologies, providing real-time communication and collaboration for teams.
 
-First, run the development server:
+## 🚀 Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Framework**: [Next.js 15](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) & [shadcn/ui](https://ui.shadcn.dev/)
+- **State Management**: [Jotai](https://jotai.org/)
+- **Backend**: [Convex](https://convex.dev/) + [Auth.js v5](https://authjs.dev/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Key Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **📡 Real-Time Communication**: Instant messaging with real-time updates.
+- **👍 Reactions to Messages**: Add emoji reactions to messages.
+- **🧵 Threads / Replies System**: Organize conversations with threaded replies.
+- **✏️ Editing Messages**: Edit sent messages for corrections or updates.
+- **🗑️ Deleting Messages**: Remove messages when necessary.
+- **🔐 Role-Based Access Control**: Manage permissions for users based on roles.
+- **🖼️ Image Attachments**: Upload and share images in messages.
+- **🔒 Authentication**: Secure login with [NextAuth.js v5](https://authjs.dev/).
+- **📺 Channel Creation**: Create and manage channels for focused discussions.
+- **🏢 Workspace Creation**: Set up workspaces for team collaboration.
+- **✉️ Invite System / Invite Codes**: Invite users to workspaces via email or invite codes.
+- **💬 Direct Messaging**: Private conversations between users.
+- **👥 User Profiles**: View and manage user profiles.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎨 UI/UX
 
-## Learn More
+- Built with **shadcn/ui** for a modern and accessible design system.
+- Styled using **Tailwind CSS** for rapid and responsive UI development.
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Hosted on [Vercel](https://vercel.com/) for fast and reliable performance.
+- **Live Demo**: [slack-rebuild.vercel.app](https://slack-rebuild.vercel.app/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Development
 
-## Deploy on Vercel
+To run the project locally:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Clone the repository:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   git clone https://github.com/your-username/slack-clone.git
+   cd slack-clone
+   ```
+
+2. Install dependencies using `bun`:
+
+   ```bash
+   bun install
+   ```
+
+3. Create a `.env` file and configure the required environment variables:
+
+   ```env
+   CONVEX_DEPLOYMENT=dev:your-convex-deployment
+   NEXT_PUBLIC_CONVEX_URL=https://your-convex-url.convex.cloud
+   ```
+
+4. Start the development server:
+
+   ```bash
+   bun dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
