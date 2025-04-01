@@ -9,7 +9,7 @@ export const AuthScreen = () => {
   const [state, setState] = useState<AuthFlowType>(AuthFlowEnum.SignIn)
 
   return (
-    <div className='bg-brand-300 flex h-full items-center justify-center'>
+    <div className='flex h-full items-center justify-center bg-[#5E2C5F]'>
       <div className='md:h-auto md:w-[420px]'>
         {state === AuthFlowEnum.SignIn ? (
           <SignInCard setState={setState} />
